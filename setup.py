@@ -3,8 +3,8 @@ from os.path import join
 
 name = 'menhir.contenttype.document'
 version = '0.1'
-history = open(os.path.join("docs", "HISTORY.txt").read()
-readme = open(os.path.join("src", "menhir", "contenttype", "document", "README.txt").read()
+history = open(os.path.join("docs", "HISTORY.txt")).read()
+readme = open(os.path.join("src", "menhir", "contenttype", "document", "README.txt")).read()
 
 setup(name = name,
       version = version,
