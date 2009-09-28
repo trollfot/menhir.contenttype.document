@@ -3,13 +3,15 @@
 import grok
 import zope.schema
 import dolmen.content as content
+import dolmen.forms.crud as crud
+import megrok.z3cform.base as z3cform
 
 from html2text import html2text
 from zope.i18nmessageid import MessageFactory
 from zope.interface import Interface
 from zope.index.text.interfaces import ISearchableText
 from dolmen.widget.tinymce.widget import TinyMCEWidgetFactory
-import dolmen.forms.crud as crud
+
 
 _ = MessageFactory('dolmen')
 
@@ -36,7 +38,7 @@ class SearchableTextDocument(grok.Adapter):
 
 
 class RichDocumentCustomize(crud.FieldsCustomizer):
-    grok.adapts(Document, crud.IForm, Interface)
+    grok.adapts(Document, z3cform.IGrokForm, Interface)
     
     def __call__(self, fields):
         fields['body'].widgetFactory = TinyMCEWidgetFactory
