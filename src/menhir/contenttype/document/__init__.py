@@ -1,1 +1,1 @@
-from base import IDocument, Document
+from menhir.contenttype.document.document import IDocument, Document
