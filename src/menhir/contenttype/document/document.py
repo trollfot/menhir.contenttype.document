@@ -4,8 +4,6 @@ import grok
 import zope.schema
 import dolmen.content as content
 import dolmen.forms.crud as crud
-import megrok.z3cform.base as z3cform
-
 from html2text import html2text
 from dolmen.app.layout import IDisplayView
 from dolmen.widget.tinymce import TINYMCE_INPUT, TINYMCE_DISPLAY
