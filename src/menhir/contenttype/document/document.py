@@ -6,7 +6,7 @@ import dolmen.content as content
 import dolmen.forms.crud as crud
 from html2text import html2text
 from dolmen.app.layout import Index
-from dolmen.widget.tinymce import TINYMCE_INPUT, TINYMCE_DISPLAY
+from dolmen.widget.tinymce import TINYMCE_INPUT
 from zope.i18nmessageid import MessageFactory
 from zope.interface import Interface
 from zope.index.text.interfaces import ISearchableText
@@ -26,7 +26,8 @@ class IDocument(content.IBaseContent):
 class Document(content.Content):
     content.name(_("Document"))
     content.schema(IDocument)
-    
+    content.require('dolmen.content.Add')
+
 
 class SearchableTextDocument(grok.Adapter):
      grok.implements(ISearchableText)
