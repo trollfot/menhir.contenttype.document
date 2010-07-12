@@ -12,7 +12,7 @@ from zope.interface import Interface
 from zope.index.text.interfaces import ISearchableText
 
 
-_ = MessageFactory('dolmen')
+_ = MessageFactory('menhir.contenttype.document')
 
 
 class IDocument(content.IBaseContent):
