@@ -8,7 +8,9 @@ readme = open(
     join("src", "menhir", "contenttype", "document", "README.txt")).read()
 
 tests_require = [
-
+    'zope.app.publisher',
+    'zope.component',
+    'zope.publisher',
     ]
 
 setup(name = name,
@@ -32,7 +34,6 @@ setup(name = name,
       install_requires=[
           'dolmen.app.layout',
           'dolmen.content >= 0.5.1',
-          'dolmen.app.content >= 1.0a1',
           'dolmen.forms.crud >= 1.0b1',
           'dolmen.widget.tinymce',
           'grok',
@@ -42,6 +43,7 @@ setup(name = name,
           'zope.index',
           'zope.interface',
           'zope.schema',
+          'dolmen.app.security',
       ],
       classifiers = [
         'Environment :: Web Environment',
