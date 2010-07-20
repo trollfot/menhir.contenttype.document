@@ -10,7 +10,7 @@ allowing a WYSIWYG edition and indexes itself for full-text searches.
 Schema
 ======
 
-A `Document` has a dedicated scheùa defining a text field, in addition
+A `Document` has a dedicated schema defining a text field, in addition
 of the base `IBaseContent`::
 
     >>> from dolmen.content import IBaseContent
