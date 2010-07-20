@@ -3,8 +3,13 @@ from os.path import join
 
 name = 'menhir.contenttype.document'
 version = '0.1'
-history = open(os.path.join("docs", "HISTORY.txt")).read()
-readme = open(os.path.join("src", "menhir", "contenttype", "document", "README.txt")).read()
+history = open(join("docs", "HISTORY.txt")).read()
+readme = open(
+    join("src", "menhir", "contenttype", "document", "README.txt")).read()
+
+tests_require = [
+
+    ]
 
 setup(name = name,
       version = version,
@@ -22,17 +27,24 @@ setup(name = name,
       include_package_data = True,
       platforms = 'Any',
       zip_safe = False,
+      tests_require = tests_require,
+      extras_require = {'test': tests_require},
       install_requires=[
-          'setuptools',
+          'dolmen.app.layout',
+          'dolmen.content >= 0.5.1',
+          'dolmen.app.content >= 1.0a1',
+          'dolmen.forms.crud >= 1.0b1',
+          'dolmen.widget.tinymce',
           'grok',
           'html2text',
-          'dolmen.content',
-          'dolmen.widget.tinymce',
+          'setuptools',
+          'zope.i18nmessageid',
+          'zope.index',
+          'zope.interface',
+          'zope.schema',
       ],
       classifiers = [
-        'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
-        'Framework :: Grok',
         'Intended Audience :: Other Audience',
         'License :: OSI Approved :: GNU General Public License (GPL)',
         'Operating System :: OS Independent',
