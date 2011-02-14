@@ -11,12 +11,12 @@ Schema
 ======
 
 A `Document` has a dedicated schema defining a text field, in addition
-of the base `IBaseContent`::
+of the base `IDescriptiveSchema`::
 
-    >>> from dolmen.content import IBaseContent
+    >>> from dolmen.app.content import IDescriptiveSchema
     >>> from menhir.contenttype.document import IDocument
 
-    >>> IDocument.isOrExtends(IBaseContent)
+    >>> IDocument.isOrExtends(IDescriptiveSchema)
     True
 
     >>> from dolmen.content import schema
@@ -75,11 +75,15 @@ adapter::
     >>> from zope.index.text.interfaces import ISearchableText
     >>> indexer = ISearchableText(mydoc)
     >>> indexer.getSearchableText()
-    (u'Some title', u'Some body\n\n')
+    (u'Some title', u'', u'Some body\n\n')
 
     >>> mydoc.body = u'<p>Rich content comes in <strong>HTML</strong></p>'
     >>> indexer.getSearchableText()
-    (u'Some title', u'Rich content comes in **HTML**\n\n')
+    (u'Some title', u'', u'Rich content comes in **HTML**\n\n')
+
+    >>> mydoc.description = u"I'm described"
+    >>> indexer.getSearchableText()
+    (u'Some title', u"I'm described", u'Rich content comes in **HTML**\n\n')
 
 
 View

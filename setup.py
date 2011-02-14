@@ -4,15 +4,16 @@ from setuptools import setup, find_packages
 from os.path import join
 
 name = 'menhir.contenttype.document'
-version = '0.1'
+version = '0.2'
 history = open(join("docs", "HISTORY.txt")).read()
 readme = open(
     join("src", "menhir", "contenttype", "document", "README.txt")).read()
 
 tests_require = [
-    'zope.app.publisher',
     'zope.component',
+    'zope.i18n',
     'zope.publisher',
+    'zope.traversing',
     ]
 
 setup(name = name,
@@ -36,8 +37,9 @@ setup(name = name,
       install_requires=[
           'dolmen.app.layout',
           'dolmen.app.security',
-          'dolmen.content >= 0.5.1',
-          'dolmen.forms.crud >= 1.0b1',
+          'dolmen.app.content >= 1.0b1',
+          'dolmen.content >= 0.7',
+          'dolmen.forms.crud >= 1.0b2',
           'dolmen.widget.tinymce',
           'grok',
           'html2text',
